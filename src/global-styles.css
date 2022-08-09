@@ -1,6 +1,7 @@
 :root {
+  /* Colors */
   --main-bg-color: #282c34;
-  --font-color-white: #fff;
+  --white: #fff;
 }
 
 body {
@@ -11,6 +12,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: var(--main-bg-color);
-  color: var(--font-color-white);
-  min-height: 100vh;
+  color: var(--white);
 }
