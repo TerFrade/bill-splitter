@@ -1,16 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Card } from "./elements"
-
 function App() {
-  return (
-    <Container>
-      <Card>
-        <div>hello</div>
-      </Card>
-    </Container>
-  )
+  return <Container></Container>
 }
 
 const Container = styled.div`

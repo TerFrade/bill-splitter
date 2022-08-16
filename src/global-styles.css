@@ -1,7 +1,26 @@
 :root {
   /* Colors */
+  --primary: #4ea196;
+  --secondary: #00474b;
+  --accent: #b3e7c3;
   --main-bg-color: #282c34;
   --white: #fff;
+
+  /* scale for small screens */
+  --ms-small-1: 1rem;
+  --ms-small-2: 1.2rem;
+  --ms-small-3: 1.44rem;
+  --ms-small-4: 1.728rem;
+  --ms-small-5: 2.074rem;
+  --ms-small-6: 2.488rem;
+
+  /* scale for large screens */
+  --ms-large-1: 1rem;
+  --ms-large-2: 1.333rem;
+  --ms-large-3: 1.777rem;
+  --ms-large-4: 2.369rem;
+  --ms-large-5: 3.157rem;
+  --ms-large-6: 4.209rem;
 }
 
 body {
