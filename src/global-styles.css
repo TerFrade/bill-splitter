@@ -3,6 +3,7 @@
   --primary: #4ea196;
   --secondary: #00474b;
   --accent: #b3e7c3;
+  --light: #f3f8fb;
   --main-bg-color: #282c34;
   --white: #fff;
 
@@ -21,12 +22,20 @@
   --ms-large-4: 2.369rem;
   --ms-large-5: 3.157rem;
   --ms-large-6: 4.209rem;
+
+  /* screen size breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-laptop: 1024px;
+  --bp-desktop: 1200px;
+
+  --main-font: "Space Mono", monospace, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: "Space Mono", monospace, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

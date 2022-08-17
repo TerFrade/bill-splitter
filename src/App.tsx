@@ -1,8 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
+import { BillCalculator } from "./components"
+
 function App() {
-  return <Container></Container>
+  return (
+    <Container>
+      <BillCalculator />
+    </Container>
+  )
 }
 
 const Container = styled.div`
