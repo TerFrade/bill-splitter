@@ -24,14 +24,16 @@ const Container = styled.div`
   flex-direction: column;
   flex-shrink: 1;
   gap: 20px;
+  max-width: 240px;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--white);
   color: black;
 
-  @media screen and (min-width: 540px) {
-    height: 100%;
+  @media screen and (min-width: 640px) {
     flex-direction: row;
+    height: 100%;
+    max-width: 680px;
   }
 `
 

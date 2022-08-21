@@ -36,26 +36,35 @@ const Container = styled.div`
     padding: 0;
   }
 
-  @media screen and (min-width: 284px) {
+  @media screen and (min-width: 640px) {
     flex-wrap: nowrap;
     text-align: start;
-    .money {
-      text-align: end;
-    }
   }
 `
 
 const Label = styled.div`
   flex-basis: 100%;
+  .title {
+    font-weight: bold;
+  }
   .description {
     font-size: 0.75rem;
+    color: #ffffff9e;
   }
 `
 
 const Info = styled.div`
   flex-basis: 100%;
   .money {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
+    color: var(--accent);
+  }
+
+  @media screen and (min-width: 640px) {
+    .money {
+      text-align: end;
+      font-size: 2rem;
+    }
   }
 `
