@@ -48,5 +48,9 @@ const Container = styled.div`
     :focus-visible {
       outline: 1px solid #ddd6fe;
     }
+
+    ::selection {
+      background: var(--accent);
+    }
   }
 `
