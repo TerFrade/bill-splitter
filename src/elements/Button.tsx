@@ -23,5 +23,6 @@ const Action = styled.button`
   font-weight: bold;
   :active:hover {
     background-color: var(--primary);
+    color: var(--accent);
   }
 `

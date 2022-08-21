@@ -70,7 +70,7 @@ const Container = styled.div`
 
         :focus-visible {
           outline: none;
-          outline: 1px solid #e2eef5;
+          outline: 1px solid #ddd6fe;
         }
       }
     }

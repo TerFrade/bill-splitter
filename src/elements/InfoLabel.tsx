@@ -64,7 +64,7 @@ const Info = styled.div`
   @media screen and (min-width: 640px) {
     .money {
       text-align: end;
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
   }
 `

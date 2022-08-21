@@ -36,7 +36,7 @@ const Container = styled.div`
     text-align: end;
 
     :focus-visible {
-      outline: 1px solid #e2eef5;
+      outline: 1px solid #ddd6fe;
     }
   }
 `
