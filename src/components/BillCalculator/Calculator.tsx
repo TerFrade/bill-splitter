@@ -1,14 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 
+import dollarIcon from "../../assets/icon-dollar.svg"
+import userIcon from "../../assets/icon-person.svg"
 import { TextField, CustomSelect } from "../../elements"
 
 const Calculator = () => {
   return (
     <Container>
-      <TextField />
+      <TextField label={"Bill"} icon={dollarIcon} type={"number"} />
       <CustomSelect />
-      <TextField />
+      <TextField label={"Number of People"} icon={userIcon} type={"number"} />
     </Container>
   )
 }

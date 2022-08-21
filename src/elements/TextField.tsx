@@ -1,14 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 
-import dollarIcon from "../assets/icon-dollar.svg"
+type TextFieldProps = {
+  label: string
+  icon: any
+  type: string
+}
 
-const TextField = () => {
+const TextField = ({ label, icon, type }: TextFieldProps) => {
   return (
     <Container>
-      <label htmlFor="text-input">Number of People</label>
-      <img src={dollarIcon} />
-      <input type="text" />
+      <label htmlFor={`text-input-${label.toLowerCase().replaceAll(" ", "-")}`}>
+        {label}
+      </label>
+      <img src={icon} />
+      <input
+        id={`text-input-${label.toLowerCase().replaceAll(" ", "-")}`}
+        type={type}
+      />
     </Container>
   )
 }
@@ -28,9 +37,10 @@ const Container = styled.div`
 
   img {
     position: absolute;
-    transform: translateY(180%);
+    transform: translateY(190%);
     padding: 0px 10px;
-    width: 0.75rem;
+    width: 13px;
+    height: 18px;
   }
 
   input {
@@ -52,5 +62,16 @@ const Container = styled.div`
     ::selection {
       background: var(--accent);
     }
+
+    /* Removes number spinner for Chrome, Safari, Edge, Opera */
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  /* Removes number spinner for Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 `
