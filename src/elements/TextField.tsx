@@ -1,10 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 
+import dollarIcon from "../assets/icon-dollar.svg"
+
 const TextField = () => {
   return (
     <Container>
       <label htmlFor="text-input">Number of People</label>
+      <img src={dollarIcon} />
       <input type="text" />
     </Container>
   )
@@ -21,6 +24,13 @@ const Container = styled.div`
     color: var(--dark);
     font-size: 0.85rem;
     font-weight: bold;
+  }
+
+  img {
+    position: absolute;
+    transform: translateY(180%);
+    padding: 0px 10px;
+    width: 0.75rem;
   }
 
   input {
