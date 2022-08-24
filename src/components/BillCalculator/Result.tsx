@@ -3,16 +3,25 @@ import styled from "styled-components"
 
 import { Button, InfoLabel } from "../../elements"
 
-const Result = () => {
+type ResultProps = {
+  tipAmount: string
+  totalAmount: string
+}
+
+const Result = ({ tipAmount, totalAmount }: ResultProps) => {
   return (
     <Container>
       <InfoWrapper>
         <InfoLabel
           title={"Tip Amount"}
           description={"/ person"}
-          value={"$4.82"}
+          value={tipAmount}
         />
-        <InfoLabel title={"Total"} description={"/ person"} value={"$5.27"} />
+        <InfoLabel
+          title={"Total"}
+          description={"/ person"}
+          value={totalAmount}
+        />
       </InfoWrapper>
       <Button label={"RESET"} />
     </Container>

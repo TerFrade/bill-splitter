@@ -5,12 +5,28 @@ import dollarIcon from "../../assets/icon-dollar.svg"
 import userIcon from "../../assets/icon-person.svg"
 import { TextField, CustomSelect } from "../../elements"
 
-const Calculator = () => {
+type CalculatorProps = {
+  handleChange: (e: any) => void
+}
+
+const Calculator = ({ handleChange }: CalculatorProps) => {
   return (
     <Container>
-      <TextField label={"Bill"} icon={dollarIcon} type={"number"} />
+      <TextField
+        label={"Bill"}
+        icon={dollarIcon}
+        name={"billAmount"}
+        type={"number"}
+        handleChange={handleChange}
+      />
       <CustomSelect />
-      <TextField label={"Number of People"} icon={userIcon} type={"number"} />
+      <TextField
+        label={"Number of People"}
+        icon={userIcon}
+        name={"numberOfPeople"}
+        type={"number"}
+        handleChange={handleChange}
+      />
     </Container>
   )
 }

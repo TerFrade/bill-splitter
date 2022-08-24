@@ -16,13 +16,13 @@ const Action = styled.button`
   padding: 5px;
   border: none;
   border-radius: 5px;
-  color: var(--secondary);
-  background-color: var(--accent);
+  background-color: var(--primary);
+  color: var(--accent);
   font-family: var(--main-font);
   font-size: 1.25rem;
   font-weight: bold;
   :active:hover {
-    background-color: var(--primary);
-    color: var(--accent);
+    color: var(--secondary);
+    background-color: var(--accent);
   }
 `

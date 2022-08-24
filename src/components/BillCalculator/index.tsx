@@ -1,23 +1,37 @@
-import React from "react"
+import React, { useReducer } from "react"
 import styled from "styled-components"
 
 import Calculator from "./Calculator"
+import { calculatorReducer, INITIAL_STATE } from "./calculatorReducer"
 import Result from "./Result"
 
-const index = () => {
+const BillCalculator = () => {
+  const [state, dispatch] = useReducer(calculatorReducer, INITIAL_STATE)
+
+  const handleChange = (e: any) => {
+    dispatch({
+      type: "CHANGE_INPUT",
+      payload: { name: e.target.name, value: e.target.value },
+    })
+  }
+  // eslint-disable-next-line no-console
+  console.log(state)
   return (
     <Container>
       <Column>
-        <Calculator />
+        <Calculator handleChange={handleChange} />
       </Column>
       <Column>
-        <Result />
+        <Result
+          tipAmount={`$${state?.billAmount}`}
+          totalAmount={`$${state?.numberOfPeople}`}
+        />
       </Column>
     </Container>
   )
 }
 
-export default index
+export default BillCalculator
 
 const Container = styled.div`
   display: flex;

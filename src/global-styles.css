@@ -41,8 +41,5 @@ body {
 
   background-color: var(--main-bg-color);
   color: var(--white);
-}
-
-body > * {
   margin: 0;
 }

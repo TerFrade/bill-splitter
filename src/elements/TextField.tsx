@@ -5,18 +5,27 @@ type TextFieldProps = {
   label: string
   icon: any
   type: string
+  name?: string
+  handleChange: (e: any) => void
 }
 
-const TextField = ({ label, icon, type }: TextFieldProps) => {
+const TextField = ({
+  label,
+  icon,
+  type,
+  name,
+  handleChange,
+}: TextFieldProps) => {
+  const formattedLabel = label.toLowerCase().replaceAll(" ", "-")
   return (
     <Container>
-      <label htmlFor={`text-input-${label.toLowerCase().replaceAll(" ", "-")}`}>
-        {label}
-      </label>
+      <label htmlFor={`text-input-${formattedLabel}`}>{label}</label>
       <img src={icon} />
       <input
-        id={`text-input-${label.toLowerCase().replaceAll(" ", "-")}`}
+        id={`text-input-${formattedLabel}`}
+        name={name}
         type={type}
+        onChange={handleChange}
       />
     </Container>
   )
