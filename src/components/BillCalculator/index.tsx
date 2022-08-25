@@ -48,9 +48,8 @@ export default BillCalculator
 const Container = styled.form`
   display: flex;
   flex-direction: column;
-  flex-shrink: 1;
   gap: 20px;
-  max-width: 300px;
+  max-width: 250px;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--white);
