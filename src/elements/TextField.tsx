@@ -22,7 +22,7 @@ const TextField = ({
   return (
     <Container>
       {label && <label htmlFor={`text-input-${formattedLabel}`}>{label}</label>}
-      {icon && <img src={icon} />}
+      {icon && <img src={icon} draggable="false" />}
       <input
         id={`text-input-${formattedLabel}`}
         placeholder={placeholder}
@@ -55,6 +55,11 @@ const Container = styled.div`
     padding: 0px 10px;
     width: 13px;
     height: 18px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   input {
