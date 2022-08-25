@@ -32,10 +32,19 @@ export const calculatorReducer = (
       const { billAmount, selectedTip, numberOfPeople } = state
       const calcTipAmount = (billAmount * (selectedTip / 100)) / numberOfPeople
       const calcTotalAmount = billAmount / numberOfPeople + calcTipAmount
+
       return {
         ...state,
-        tipAmount: Math.round(calcTipAmount * 100) / 100,
-        totalAmount: Math.round(calcTotalAmount * 100) / 100,
+        tipAmount:
+          isNaN(Math.round(calcTipAmount * 100) / 100) ||
+          !isFinite(Math.round(calcTipAmount * 100) / 100)
+            ? 0
+            : Math.round(calcTipAmount * 100) / 100,
+        totalAmount:
+          isNaN(Math.round(calcTotalAmount * 100) / 100) ||
+          !isFinite(Math.round(calcTotalAmount * 100) / 100)
+            ? 0
+            : Math.round(calcTotalAmount * 100) / 100,
       }
     }
     case "RESET_STATE": {
