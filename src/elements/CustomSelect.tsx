@@ -91,7 +91,9 @@ const Container = styled.div`
     }
 
     div {
-      height: 100%;
+      > div {
+        height: 100%;
+      }
       input {
         all: unset;
         width: 100%;
