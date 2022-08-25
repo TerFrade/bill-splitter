@@ -6,9 +6,10 @@ import { Button, InfoLabel } from "../../elements"
 type ResultProps = {
   tipAmount: string
   totalAmount: string
+  handleClick: () => void
 }
 
-const Result = ({ tipAmount, totalAmount }: ResultProps) => {
+const Result = ({ tipAmount, totalAmount, handleClick }: ResultProps) => {
   return (
     <Container>
       <InfoWrapper>
@@ -23,7 +24,7 @@ const Result = ({ tipAmount, totalAmount }: ResultProps) => {
           value={totalAmount}
         />
       </InfoWrapper>
-      <Button label={"RESET"} />
+      <Button label={"RESET"} handleClick={handleClick} />
     </Container>
   )
 }

@@ -11,20 +11,32 @@ const BillCalculator = () => {
   const handleChange = (e: any) => {
     dispatch({
       type: "CHANGE_INPUT",
-      payload: { name: e.target.name, value: e.target.value },
+      payload: {
+        name: e.type === "click" ? "selectedTip" : e.target.name,
+        value: isNaN(parseInt(e.target.value)) ? 0 : parseInt(e.target.value),
+      },
+    })
+
+    dispatch({
+      type: "UPDATE_TOTAL",
     })
   }
-  // eslint-disable-next-line no-console
-  console.log(state)
+
+  const handleClick = () => {
+    document.getElementById("create-course-form")?.onreset
+    dispatch({ type: "RESET_STATE" })
+  }
+
   return (
-    <Container>
+    <Container id="create-course-form">
       <Column>
         <Calculator handleChange={handleChange} />
       </Column>
       <Column>
         <Result
-          tipAmount={`$${state?.billAmount}`}
-          totalAmount={`$${state?.numberOfPeople}`}
+          tipAmount={`$${state?.tipAmount}`}
+          totalAmount={`$${state?.totalAmount}`}
+          handleClick={handleClick}
         />
       </Column>
     </Container>
@@ -33,12 +45,12 @@ const BillCalculator = () => {
 
 export default BillCalculator
 
-const Container = styled.div`
+const Container = styled.form`
   display: flex;
   flex-direction: column;
   flex-shrink: 1;
   gap: 20px;
-  max-width: 280px;
+  max-width: 300px;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--white);

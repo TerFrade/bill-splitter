@@ -9,6 +9,14 @@ type CalculatorProps = {
   handleChange: (e: any) => void
 }
 
+const SelectData = [
+  { label: "5%", value: 5 },
+  { label: "15%", value: 15 },
+  { label: "20%", value: 20 },
+  { label: "25%", value: 25 },
+  { label: "50%", value: 50 },
+]
+
 const Calculator = ({ handleChange }: CalculatorProps) => {
   return (
     <Container>
@@ -19,7 +27,7 @@ const Calculator = ({ handleChange }: CalculatorProps) => {
         type={"number"}
         handleChange={handleChange}
       />
-      <CustomSelect />
+      <CustomSelect SelectData={SelectData} handleChange={handleChange} />
       <TextField
         label={"Number of People"}
         icon={userIcon}

@@ -3,10 +3,11 @@ import styled from "styled-components"
 
 type ButtonProps = {
   label: string
+  handleClick: () => void
 }
 
-const Button = ({ label }: ButtonProps) => {
-  return <Action>{label}</Action>
+const Button = ({ label, handleClick }: ButtonProps) => {
+  return <Action onClick={handleClick}>{label}</Action>
 }
 
 export default Button

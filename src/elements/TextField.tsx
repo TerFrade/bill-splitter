@@ -2,8 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 type TextFieldProps = {
-  label: string
-  icon: any
+  label?: string
+  icon?: any
+  placeholder?: string
   type: string
   name?: string
   handleChange: (e: any) => void
@@ -12,20 +13,24 @@ type TextFieldProps = {
 const TextField = ({
   label,
   icon,
+  placeholder,
   type,
   name,
   handleChange,
 }: TextFieldProps) => {
-  const formattedLabel = label.toLowerCase().replaceAll(" ", "-")
+  const formattedLabel = label?.toLowerCase().replaceAll(" ", "-")
   return (
     <Container>
-      <label htmlFor={`text-input-${formattedLabel}`}>{label}</label>
-      <img src={icon} />
+      {label && <label htmlFor={`text-input-${formattedLabel}`}>{label}</label>}
+      {icon && <img src={icon} />}
       <input
         id={`text-input-${formattedLabel}`}
+        placeholder={placeholder}
         name={name}
         type={type}
-        onChange={handleChange}
+        onChange={(e) => {
+          handleChange(e)
+        }}
       />
     </Container>
   )
