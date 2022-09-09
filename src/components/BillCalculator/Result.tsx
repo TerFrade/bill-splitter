@@ -20,7 +20,7 @@ const Result = ({ tipAmount, totalAmount, handleClick }: ResultProps) => {
         />
         <InfoLabel
           title={"Total"}
-          description={"/ person"}
+          description={"/ person(inc Tip)"}
           value={totalAmount}
         />
       </InfoWrapper>

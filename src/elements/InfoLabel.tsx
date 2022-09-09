@@ -56,7 +56,7 @@ const Label = styled.div`
 const Info = styled.div`
   flex-basis: 100%;
   .money {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     font-weight: bold;
     color: var(--accent);
   }
@@ -64,7 +64,7 @@ const Info = styled.div`
   @media screen and (min-width: 640px) {
     .money {
       text-align: end;
-      font-size: 2.25rem;
+      font-size: 1.85rem;
     }
   }
 `
